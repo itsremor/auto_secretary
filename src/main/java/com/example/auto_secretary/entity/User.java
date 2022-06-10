@@ -1,4 +1,4 @@
-package com.example.auto_secretary;
+package com.example.auto_secretary.entity;
 
 import javax.persistence.*;
 @Entity

@@ -9,6 +9,38 @@ public class Invitation {
     @Column(name = "id")
     private long id;
 
+    public Invitation() {
+    }
+
+    public Invitation(User user, Event event) {
+        this.user = user;
+        this.event = event;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;

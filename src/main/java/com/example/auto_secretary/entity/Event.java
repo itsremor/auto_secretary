@@ -14,6 +14,16 @@ public class Event {
     private LocalDate start;
     private LocalDate end;
 
+    public Event() {
+    }
+
+    public Event(String event_name, LocalDate start, LocalDate end, Room room) {
+        this.event_name = event_name;
+        this.start = start;
+        this.end = end;
+        this.room = room;
+    }
+
     @OneToOne
     @JoinColumn(name = "room_id", referencedColumnName = "id")
     private Room room;

@@ -2,10 +2,8 @@ package com.example.auto_secretary.controller;
 
 import com.example.auto_secretary.entity.Departament;
 import com.example.auto_secretary.repository.DepartamentRepository;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import javax.swing.text.html.Option;
 import java.util.List;
@@ -17,6 +15,16 @@ public class DepartamentController {
 
     public DepartamentController(DepartamentRepository departamentRepository) {
         this.departamentRepository = departamentRepository;
+    }
+
+    @PostMapping("departaments/create")
+    public ResponseEntity addNewDepartament(@RequestBody Departament departament){
+        try {
+            departamentRepository.save(departament);
+            return ResponseEntity.ok().body("Пользователь успешно создан");
+        } catch (Exception e){
+            return ResponseEntity.badRequest().body("Произошла неизвестная ошибка");
+        }
     }
 
     @GetMapping("departaments/get")

@@ -2,6 +2,7 @@ package com.example.auto_secretary;
 
 import com.example.auto_secretary.entity.Departament;
 import com.example.auto_secretary.repository.DepartamentRepository;
+import com.example.auto_secretary.service.CreateDatabase;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,10 +20,7 @@ public class AutoSecretaryApplication {
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
-                for (int i = 0; i < 6; i++) {
-                    Departament departament = new Departament("Департамент номер " + i);
-                    departamentRepository.save(departament);
-                }
+                CreateDatabase.createDepartaments(departamentRepository);
             }
         };
     }

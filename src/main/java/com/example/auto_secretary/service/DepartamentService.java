@@ -15,7 +15,7 @@ public class DepartamentService {
     private DepartamentRepository departamentRepository;
 
 //    public Departament createDepartement(Departament departament) throws DepartamentAlreadyExistsException{
-//        if (departamentRepository.findByName(departament.getDepartament_name()) != null){
+//        if (departamentRepository.findByName(departament.getName()) != null){
 //            throw  new DepartamentAlreadyExistsException("Такой департамент уже существует");
 //        }
 //        return departamentRepository.save(departament);

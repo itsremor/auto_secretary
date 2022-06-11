@@ -2,6 +2,8 @@ package com.example.auto_secretary;
 
 import com.example.auto_secretary.entity.Departament;
 import com.example.auto_secretary.repository.DepartamentRepository;
+import com.example.auto_secretary.repository.PositionRepository;
+import com.example.auto_secretary.repository.UserRepository;
 import com.example.auto_secretary.service.CreateDatabase;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -16,11 +18,13 @@ public class AutoSecretaryApplication {
     }
 
     @Bean
-    public CommandLineRunner runner(DepartamentRepository departamentRepository){
+    public CommandLineRunner runner(DepartamentRepository departamentRepository, PositionRepository positionRepository, UserRepository userRepository){
         return new CommandLineRunner() {
             @Override
             public void run(String... args) throws Exception {
                 CreateDatabase.createDepartaments(departamentRepository);
+                CreateDatabase.createPositions(positionRepository);
+                //CreateDatabase.createUsers(userRepository, departamentRepository, positionRepository);
             }
         };
     }

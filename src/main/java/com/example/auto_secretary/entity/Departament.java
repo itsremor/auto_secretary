@@ -1,39 +1,36 @@
 package com.example.auto_secretary.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Departament {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 
-    public Departament(String departament_name) {
-        this.departament_name = departament_name;
+    public Departament(String name) {
+        this.name = name;
     }
 
     public Departament() {
     }
 
-    private String departament_name;
+    private String name;
 
     public long getId() {
         return id;
     }
 
-    public String getDepartament_name() {
-        return departament_name;
+    public String getName() {
+        return name;
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
-    public void setDepartament_name(String departament_name) {
-        this.departament_name = departament_name;
+    public void setName(String departament_name) {
+        this.name = departament_name;
     }
 }

@@ -21,7 +21,7 @@ public class DepartamentController {
     public ResponseEntity addNewDepartament(@RequestBody Departament departament){
         try {
             departamentRepository.save(departament);
-            return ResponseEntity.ok().body("Пользователь успешно создан");
+            return ResponseEntity.ok().body("Департамент успешно создан");
         } catch (Exception e){
             return ResponseEntity.badRequest().body("Произошла неизвестная ошибка");
         }

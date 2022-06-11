@@ -9,13 +9,13 @@ import com.example.auto_secretary.repository.UserRepository;
 
 public class CreateDatabase {
     public static void createDepartaments(DepartamentRepository departamentRepository) {
-        Departament departament = new Departament("Компания");
+        Departament departament = new Departament("Руководство компании");
         departamentRepository.save(departament);
 
-        departament = new Departament("Департамент разработки ПО");
+        departament = new Departament("Отдел доставки");
         departamentRepository.save(departament);
 
-        departament = new Departament("Департамент продаж");
+        departament = new Departament("Отдел продаж");
         departamentRepository.save(departament);
 
         departament = new Departament("Административный отдел");
@@ -24,7 +24,7 @@ public class CreateDatabase {
         departament = new Departament("Департамент HR");
         departamentRepository.save(departament);
 
-        departament = new Departament("Департамент консалтинга");
+        departament = new Departament("Бухгалтерский отдел");
         departamentRepository.save(departament);
         }
 
@@ -32,22 +32,22 @@ public class CreateDatabase {
             Position position = new Position("Директор по мероприятиям", true);
             positionRepository.save(position);
 
-            position = new Position("Java разработчик", false);
+            position = new Position("Курьер", false);
             positionRepository.save(position);
 
-            position = new Position("JS разработчик", false);
+            position = new Position("Грузчик", false);
             positionRepository.save(position);
 
-            position = new Position("QA инженер", false);
+            position = new Position("Кадровый менеджер", false);
             positionRepository.save(position);
 
             position = new Position("HR менеджер", false);
             positionRepository.save(position);
 
-            position = new Position("Системный администратор", true);
+            position = new Position("Администратор офиса", true);
             positionRepository.save(position);
 
-            position = new Position("Руководитель проекта", true);
+            position = new Position("Бухгалтер", true);
             positionRepository.save(position);
         }
 
